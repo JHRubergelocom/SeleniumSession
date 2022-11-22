@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="Init">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" afterDir="false" />
+    <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="testLogin">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Base.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669108949788</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="testLogin">
+      <created>1669112138646</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669112138646</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +142,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="testLogin" />
+    <option name="LAST_COMMIT_MESSAGE" value="testLogin" />
   </component>
 </project>

@@ -17,10 +17,7 @@ public class TestLogin {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/driver/chromedriver.exe");
         driver = new ChromeDriver();
         login = new Login(driver);
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get("http://ruberg-meeting.dev.elo/ix-Solutions/plugin/de.elo.ix.plugin.proxy/web/");
     }
 
     @Test
@@ -29,5 +26,4 @@ public class TestLogin {
         login.typePassword("elo");
         login.clickLoginButton();
     }
-
 }
