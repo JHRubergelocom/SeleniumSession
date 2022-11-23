@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="testLogin">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Base.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/session/BaseFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/session/ExecuteAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/WebclientSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WebclientSessionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,7 @@
     "last_opened_file_path": "C:/Users/ruberg/Documents/Entwicklung/IntelliJ/SeleniumSession/src/test/resources/driver",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.47586206"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -50,13 +53,13 @@
       <recent name="C:\Users\ruberg\Documents\Entwicklung\IntelliJ\SeleniumSession\src\test\resources\driver" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestLogin.testLogin">
+  <component name="RunManager" selected="JUnit.WebclientSessionTest">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pageobjects.Login" />
+      <option name="MAIN_CLASS_NAME" value="session.Login" />
       <module name="SeleniumSession" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pageobjects.*" />
+          <option name="PATTERN" value="session.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -64,7 +67,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WebclientSessionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumSession" />
       <extension name="coverage">
         <pattern>
@@ -73,13 +76,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestLogin" />
+      <option name="MAIN_CLASS_NAME" value="tests.WebclientSessionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WebclientSessionTest.fail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumSession" />
       <extension name="coverage">
         <pattern>
@@ -88,8 +91,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestLogin" />
+      <option name="MAIN_CLASS_NAME" value="tests.WebclientSessionTest" />
+      <option name="METHOD_NAME" value="fail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebclientSessionTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumSession" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.WebclientSessionTest" />
       <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebclientSessionTest.testSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumSession" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.WebclientSessionTest" />
+      <option name="METHOD_NAME" value="testSession" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,8 +132,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestLogin.testLogin" />
-        <item itemvalue="JUnit.TestLogin" />
+        <item itemvalue="JUnit.WebclientSessionTest" />
+        <item itemvalue="JUnit.WebclientSessionTest.testSession" />
+        <item itemvalue="JUnit.WebclientSessionTest.testLogin" />
+        <item itemvalue="JUnit.WebclientSessionTest.fail" />
         <item itemvalue="Application.Login" />
       </list>
     </recent_temporary>
