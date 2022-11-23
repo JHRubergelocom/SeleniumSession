@@ -21,4 +21,8 @@ public class BaseFunctions {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(by)).click();
     }
 
+    public static void clickable(WebDriver driver, String name) {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.name(name)));
+    }
+
 }

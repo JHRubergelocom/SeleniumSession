@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="testLogin">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/session/BaseFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/session/ExecuteAction.java" afterDir="false" />
+    <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="Formula">
+      <change afterPath="$PROJECT_DIR$/src/main/java/session/Formula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/WebclientSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WebclientSessionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/session/BaseFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/BaseFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WebclientSessionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WebclientSessionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,7 @@
       <recent name="C:\Users\ruberg\Documents\Entwicklung\IntelliJ\SeleniumSession\src\test\resources\driver" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WebclientSessionTest">
+  <component name="RunManager" selected="JUnit.WebclientSessionTest.testSession">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="session.Login" />
       <module name="SeleniumSession" />
@@ -132,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WebclientSessionTest" />
         <item itemvalue="JUnit.WebclientSessionTest.testSession" />
+        <item itemvalue="JUnit.WebclientSessionTest" />
         <item itemvalue="JUnit.WebclientSessionTest.testLogin" />
         <item itemvalue="JUnit.WebclientSessionTest.fail" />
         <item itemvalue="Application.Login" />
@@ -163,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669112138646</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ExecuteAction">
+      <created>1669205646346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669205646346</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +184,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
     <MESSAGE value="testLogin" />
-    <option name="LAST_COMMIT_MESSAGE" value="testLogin" />
+    <MESSAGE value="ExecuteAction" />
+    <MESSAGE value="Formula" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formula" />
   </component>
 </project>
