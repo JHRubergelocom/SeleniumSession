@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class Formula {
     private final WebDriver frame;
@@ -14,7 +15,7 @@ public class Formula {
         this.frame = frame;
     }
 
-    public void SelectTab(String tabName, String startElement) {
+    public void selectTab(String tabName, String startElement) {
         List<WebElement> listTabs = frame.findElements(By.xpath("/html/body/form/div/div[1]/ul/li"));
         for (WebElement tab: listTabs) {
             // System.out.println(tab.getText());
@@ -26,7 +27,7 @@ public class Formula {
         BaseFunctions.clickable(frame, startElement);
     }
 
-    public void Save() {
+    public void save() {
         List<WebElement> listNextButtons = frame.findElements(By.name("NEXTNODE"));
         for (WebElement buttonNext: listNextButtons) {
             // System.out.println(buttonNext.getText());
@@ -52,16 +53,47 @@ public class Formula {
         }
     }
 
-    public void inputTextFieldTable(List<Map<String, String>> table, String addLineId) {
+    public void inputTextFieldTable(List<Map<String, String>> table, String addLineButtonXpath) {
         int index = 1;
         for (Map<String,String> tableLine: table) {
-            for (Map.Entry<String,String> entry: tableLine.entrySet()) {
-                if (index > 1) {
-                    click(By.xpath("//*[@addlineid='" + addLineId + "']"));
-                }
-                inputTextField(entry.getKey() + index, entry.getValue());
-                index++;
+            if (index > 1) {
+                click(By.xpath(addLineButtonXpath));
             }
+            for (Map.Entry<String,String> entry: tableLine.entrySet()) {
+                inputTextField(entry.getKey() + index, entry.getValue());
+            }
+            index++;
+        }
+    }
+
+    public void inputData(Map<String, TabPage> tabpages) {
+        for (Map.Entry<String,TabPage> entry: tabpages.entrySet()) {
+            System.out.println("Key Tabpage: " + entry.getKey());
+            System.out.println("Value Tabpage: " + entry.getValue());
+
+            String tabName = entry.getKey();
+            TabPage tabPage = entry.getValue();
+            String startElement = "";
+
+            if(tabPage.getFields().size() > 0) {
+                Optional<String> firstKey = tabPage.getFields().keySet().stream().findFirst();
+                if (firstKey.isPresent()) {
+                    startElement = firstKey.get();
+                }
+            } else if(tabPage.getTable().size() > 0) {
+                Optional<Map<String, String>> firstElement = tabPage.getTable().stream().findFirst();
+                if (firstElement.isPresent()) {
+                    Optional<String> firstKey = firstElement.get().keySet().stream().findFirst();
+                    if (firstKey.isPresent()) {
+                        startElement = firstKey.get();
+                        startElement = startElement + "1";
+                    }
+                }
+            }
+            selectTab(tabName, startElement);
+            inputTextFields(tabPage.getFields());
+            inputTextFieldTable(tabPage.getTable(), tabPage.getAddLineButtonXpath());
+
         }
     }
 }
