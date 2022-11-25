@@ -47,17 +47,34 @@ public class Formula {
         BaseFunctions.type(frame, By.name(name), text);
     }
 
+    private void inputCheckBox(String name, Boolean value) {
+        BaseFunctions.select(frame, By.name(name), value);
+    }
+
     public void inputTextFields(Map<String, String> fields) {
         for (Map.Entry<String,String> entry: fields.entrySet()) {
             inputTextField(entry.getKey(), entry.getValue());
         }
     }
 
+    private void inputCheckBoxes(Map<String, Boolean> checkboxes) {
+        for (Map.Entry<String,Boolean> entry: checkboxes.entrySet()) {
+            inputCheckBox(entry.getKey(), entry.getValue());
+        }
+    }
+
+
+
     public void inputTextFieldTable(List<Map<String, String>> table, String addLineButtonXpath) {
         int index = 1;
         for (Map<String,String> tableLine: table) {
             if (index > 1) {
                 click(By.xpath(addLineButtonXpath));
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
             for (Map.Entry<String,String> entry: tableLine.entrySet()) {
                 inputTextField(entry.getKey() + index, entry.getValue());
@@ -66,34 +83,40 @@ public class Formula {
         }
     }
 
+    private String getStartElement(TabPage tabPage) {
+        String startElement = "";
+
+        if(tabPage.getFields().size() > 0) {
+            Optional<String> firstKey = tabPage.getFields().keySet().stream().findFirst();
+            if (firstKey.isPresent()) {
+                startElement = firstKey.get();
+            }
+        } else if(tabPage.getTable().size() > 0) {
+            Optional<Map<String, String>> firstElement = tabPage.getTable().stream().findFirst();
+            if (firstElement.isPresent()) {
+                Optional<String> firstKey = firstElement.get().keySet().stream().findFirst();
+                if (firstKey.isPresent()) {
+                    startElement = firstKey.get();
+                    startElement = startElement + "1";
+                }
+            }
+        }
+        return startElement;
+    }
+
     public void inputData(Map<String, TabPage> tabpages) {
         for (Map.Entry<String,TabPage> entry: tabpages.entrySet()) {
-            System.out.println("Key Tabpage: " + entry.getKey());
-            System.out.println("Value Tabpage: " + entry.getValue());
+            // System.out.println("Key Tabpage: " + entry.getKey());
+            // System.out.println("Value Tabpage: " + entry.getValue());
 
             String tabName = entry.getKey();
             TabPage tabPage = entry.getValue();
-            String startElement = "";
-
-            if(tabPage.getFields().size() > 0) {
-                Optional<String> firstKey = tabPage.getFields().keySet().stream().findFirst();
-                if (firstKey.isPresent()) {
-                    startElement = firstKey.get();
-                }
-            } else if(tabPage.getTable().size() > 0) {
-                Optional<Map<String, String>> firstElement = tabPage.getTable().stream().findFirst();
-                if (firstElement.isPresent()) {
-                    Optional<String> firstKey = firstElement.get().keySet().stream().findFirst();
-                    if (firstKey.isPresent()) {
-                        startElement = firstKey.get();
-                        startElement = startElement + "1";
-                    }
-                }
-            }
+            String startElement = getStartElement(tabPage);
             selectTab(tabName, startElement);
             inputTextFields(tabPage.getFields());
             inputTextFieldTable(tabPage.getTable(), tabPage.getAddLineButtonXpath());
-
+            inputCheckBoxes(tabPage.getCheckboxes());
         }
     }
+
 }

@@ -6,9 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class WebclientSession {
@@ -43,84 +40,11 @@ public class WebclientSession {
         login.clickLoginButton();
     }
 
-    public void executeAction() {
-        Action action = new Action(this, "CreateMeetingBoard");
+    public void executeAction(String actionName, Map<String, TabPage> tabPages) {
+        Action action = new Action(this, actionName);
         WebDriver frame = action.startFormula();
-
         Formula formula = new Formula(frame);
-
-        Map<String, TabPage> tabpages = new HashMap<>();
-
-        // Allgemein
-        Map<String,String> fields = new HashMap<>();
-
-        fields.put("IX_GRP_MEETING_BOARD_NAME", "Meetingboard1");
-        fields.put("IX_GRP_MEETING_BOARD_CODE", "MB1");
-        fields.put("IX_GRP_MEETING_BOARD_MINUTE_TAKER", "Bodo Kraft");
-        fields.put("IX_DESC", "Beschreibung Meetingboard1");
-
-        List<Map<String, String>> table = new ArrayList<>();
-        Map<String, String> tableLine = new HashMap<>();
-        tableLine.put("IX_MAP_MEETING_BOARD_ORGANIZER", "Jan Eichner");
-        table.add(tableLine);
-
-        tableLine = new HashMap<>();
-        tableLine.put("IX_MAP_MEETING_BOARD_ORGANIZER", "Sandra Renz");
-        table.add(tableLine);
-
-        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_220_meeting_roles']/tr[11]/td[3]/div/input");
-        tabpages.put("Allgemein", tabPage);
-
-        // Mitglieder
-        fields = new HashMap<>();
-
-        table = new ArrayList<>();
-        tableLine = new HashMap<>();
-        tableLine.put("WF_MAP_MEETING_PERSON_LASTNAME", "Baum");
-        tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Gerd");
-        tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "g.baum@contelo.de");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Gerd Baum");
-        table.add(tableLine);
-
-        tableLine = new HashMap<>();
-        tableLine.put("WF_MAP_MEETING_PERSON_LASTNAME", "Renz");
-        tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Sandra");
-        tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "s.renz@contelo.de");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Sandra Renz");
-        table.add(tableLine);
-
-        tabPage = new TabPage(fields, table, "//*[@id='part_320_members']/tr[8]/td[2]/div/input");
-        tabpages.put("Mitglieder", tabPage);
-
-        // Themen
-        fields = new HashMap<>();
-
-        table = new ArrayList<>();
-        tableLine = new HashMap<>();
-        tableLine.put("WF_MAP_MEETING_ITEM_TITLE", "Rückblende");
-        tableLine.put("WF_MAP_MEETING_ITEM_DURATION", "30");
-        tableLine.put("WF_MAP_MEETING_ITEM_DESC", "Rückblick vergangene Projekte");
-        table.add(tableLine);
-
-        tableLine = new HashMap<>();
-        tableLine.put("WF_MAP_MEETING_ITEM_TITLE", "Planung");
-        tableLine.put("WF_MAP_MEETING_ITEM_DURATION", "40");
-        tableLine.put("WF_MAP_MEETING_ITEM_DESC", "Zukünftige Projekte");
-        table.add(tableLine);
-
-        tabPage = new TabPage(fields, table, "//*[@id='part_230_meetingitem_templ']/tr[10]/td[2]/div/input");
-        tabpages.put("Themen", tabPage);
-
-
-        // Benachrichtigungen
-
-        // Einstellungwn
-
-
-
-        formula.inputData(tabpages);
-
-
+        formula.inputData(tabPages);
         formula.save();
 
     }

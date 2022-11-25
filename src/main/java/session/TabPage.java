@@ -8,10 +8,13 @@ public class TabPage {
     private final List<Map<String, String>> table;
     private final String addLineButtonXpath;
 
-    public TabPage(Map<String, String> fields, List<Map<String, String>> table, String addLineButtonXpath) {
+    private final Map<String, Boolean> checkboxes;
+
+    public TabPage(Map<String, String> fields, List<Map<String, String>> table, String addLineButtonXpath, Map<String, Boolean> checkboxes) {
         this.fields = fields;
         this.table = table;
         this.addLineButtonXpath = addLineButtonXpath;
+        this.checkboxes = checkboxes;
     }
 
     public Map<String, String> getFields() {
@@ -20,6 +23,10 @@ public class TabPage {
 
     public List<Map<String, String>> getTable() {
         return table;
+    }
+
+    public Map<String, Boolean> getCheckboxes() {
+        return checkboxes;
     }
 
     public String getAddLineButtonXpath() {
