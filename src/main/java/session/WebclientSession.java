@@ -10,6 +10,11 @@ import java.util.Map;
 
 public class WebclientSession {
     private final WebDriver driver;
+    private final String guidSolutionsFolder = "(CEB14258-17BB-EDC2-5AA2-411855867919)";
+
+    public WebDriver getDriver() {
+        return driver;
+    }
 
     public WebclientSession() {
         driver = new ChromeDriver();
@@ -38,6 +43,7 @@ public class WebclientSession {
         login.typeUsername(userName);
         login.typePassword(password);
         login.clickLoginButton();
+        selectSolutionTile();
     }
 
     public void executeAction(String actionName, Map<String, TabPage> tabPages) {
@@ -47,6 +53,20 @@ public class WebclientSession {
         formula.inputData(tabPages);
         formula.save();
 
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void selectSolutionTile() {
+        BaseFunctions.click(driver, By.xpath("//*[@id=\"tile-1013\"]"));
+    }
+
+    public void  selectSolutionsFolder() {
+        driver.get("http://ruberg-meeting.dev.elo/ix-Solutions/plugin/de.elo.ix.plugin.proxy/web/#/archive/" + guidSolutionsFolder + "/");
     }
 
 }

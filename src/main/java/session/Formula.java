@@ -71,7 +71,7 @@ public class Formula {
             if (index > 1) {
                 click(By.xpath(addLineButtonXpath));
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
