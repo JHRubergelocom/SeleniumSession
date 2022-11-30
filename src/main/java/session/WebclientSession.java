@@ -10,11 +10,6 @@ import java.util.Map;
 
 public class WebclientSession {
     private final WebDriver driver;
-    private final String guidSolutionsFolder = "(CEB14258-17BB-EDC2-5AA2-411855867919)";
-
-    public WebDriver getDriver() {
-        return driver;
-    }
 
     public WebclientSession() {
         driver = new ChromeDriver();
@@ -66,7 +61,7 @@ public class WebclientSession {
     }
 
     public void  selectSolutionsFolder() {
-        driver.get("http://ruberg-meeting.dev.elo/ix-Solutions/plugin/de.elo.ix.plugin.proxy/web/#/archive/" + guidSolutionsFolder + "/");
+        BaseFunctions.click(driver, By.xpath("//*[@id=\"treeview-1061-record-1\"]"));
     }
 
 }

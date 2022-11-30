@@ -181,7 +181,7 @@ public class WebclientSessionTest {
         tabPage = new TabPage(fields, table, "//*[@id='part_320_members']/tr[8]/td[2]/div/input", checkboxes);
         tabPages.put("Mitglieder", tabPage);
         */
-        // Themen
+        // Tagesordnungspunkte
         fields = new TreeMap<>();
 
         table = new ArrayList<>();
@@ -200,7 +200,7 @@ public class WebclientSessionTest {
         checkboxes = new TreeMap<>();
 
         tabPage = new TabPage(fields, table, "//*[@id='part_230_meetingitem_templ']/tr[10]/td[2]/div/input", checkboxes);
-        tabPages.put("Themen", tabPage);
+        tabPages.put("Tagesordnungspunkte", tabPage);
 
         // Benachrichtigungen
         /*
