@@ -19,8 +19,8 @@ public class Action {
             }
             case "CreateMeetingBoardPremium" -> {
                 ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
-                menuLocator = By.xpath("//*[@id=\"button-1280-btnIconEl\"]"); // Sitzung
-                buttonLocator = By.xpath("//*[@id=\"ext-comp-1279-textEl\"]"); // Neues Meetingboard
+                menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]"); // Sitzung
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1281-textEl\"]"); // Neues Meetingboard
             }
             case "CreateMeeting" -> {
                 ribbonLocator = By.xpath("ToDo");
