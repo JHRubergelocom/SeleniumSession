@@ -101,6 +101,11 @@ public class Formula {
                     startElement = startElement + "1";
                 }
             }
+        } else if(tabPage.getCheckboxes().size() > 0) {
+            Optional<String> firstKey = tabPage.getCheckboxes().keySet().stream().findFirst();
+            if (firstKey.isPresent()) {
+                startElement = firstKey.get();
+            }
         }
         return startElement;
     }

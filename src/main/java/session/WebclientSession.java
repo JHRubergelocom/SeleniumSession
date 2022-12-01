@@ -38,8 +38,6 @@ public class WebclientSession {
             }
         }
 
-        // WebElement actElement = driver.switchTo().activeElement();
-
         //Returns the Id of a frame.
         System.out.println("actElement Id :" + actElement.getAttribute("id"));
         //Returns the Name of a frame.
