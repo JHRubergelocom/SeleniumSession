@@ -25,6 +25,7 @@ public class Formula {
             }
         }
         BaseFunctions.clickable(frame, startElement);
+        System.out.println("ZZZZ BaseFunctions.clickable(frame, startElement) " + startElement + " ZZZZ");
     }
 
     public void save() {

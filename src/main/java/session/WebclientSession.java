@@ -5,7 +5,9 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 
+import java.util.List;
 import java.util.Map;
 
 public class WebclientSession {
@@ -21,7 +23,28 @@ public class WebclientSession {
     }
 
     public WebDriver getFrame() {
-        WebElement actElement = driver.switchTo().activeElement();
+
+        WebElement actElement = new RemoteWebElement();
+
+        List<WebElement> ele = driver.findElements(By.tagName("iframe"));
+        System.out.println("Number of frames in a page :" + ele.size());
+        for(WebElement el : ele){
+            //Returns the Id of a frame.
+            System.out.println("Frame Id :" + el.getAttribute("id"));
+            //Returns the Name of a frame.
+            System.out.println("Frame name :" + el.getAttribute("name"));
+            if (el.getAttribute("id").contains("iframe")) {
+                actElement = el;
+            }
+        }
+
+        // WebElement actElement = driver.switchTo().activeElement();
+
+        //Returns the Id of a frame.
+        System.out.println("actElement Id :" + actElement.getAttribute("id"));
+        //Returns the Name of a frame.
+        System.out.println("actElement name :" + actElement.getAttribute("name"));
+
         return driver.switchTo().frame(actElement);
     }
 

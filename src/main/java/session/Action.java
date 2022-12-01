@@ -23,9 +23,9 @@ public class Action {
                 buttonLocator = By.xpath("//*[@id=\"ext-comp-1281-textEl\"]"); // Neues Meetingboard
             }
             case "CreateMeeting" -> {
-                ribbonLocator = By.xpath("ToDo");
-                menuLocator = By.xpath("ToDo");
-                buttonLocator = By.xpath("ToDo");
+                ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
+                menuLocator = By.xpath("//*[@id=\"button-1280-btnIconEl\"]");   // Meeting
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1275-textEl\"]");  // Neues Meeting
             }
             default -> {
                 ribbonLocator = By.xpath("");
@@ -39,13 +39,13 @@ public class Action {
         ws.click(ribbonLocator);
         ws.click(menuLocator);
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         ws.click(buttonLocator);
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
