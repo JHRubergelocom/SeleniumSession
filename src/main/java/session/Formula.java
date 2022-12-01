@@ -15,15 +15,18 @@ public class Formula {
         this.frame = frame;
     }
 
-    public void selectTab(String tabName, String startElement) {
-        List<WebElement> listTabs = frame.findElements(By.xpath("/html/body/form/div/div[1]/ul/li"));
-        for (WebElement tab: listTabs) {
-            // System.out.println(tab.getText());
-            String tabText = tab.getText();
-            if (tabText.contentEquals(tabName)) {
-                tab.click();
+    public void selectTab(String tabName, String startElement, AssignmentStatus assignment) {
+        if (!tabName.equals("")) {
+            List<WebElement> listTabs = frame.findElements(By.xpath("/html/body/form/div/div[1]/ul/li"));
+            for (WebElement tab: listTabs) {
+                // System.out.println(tab.getText());
+                String tabText = tab.getText();
+                if (tabText.contentEquals(tabName)) {
+                    tab.click();
+                }
             }
         }
+        selectAssignment(assignment);
         BaseFunctions.clickable(frame, startElement);
         System.out.println("ZZZZ BaseFunctions.clickable(frame, startElement) " + startElement + " ZZZZ");
     }
@@ -110,6 +113,16 @@ public class Formula {
         return startElement;
     }
 
+    private void selectAssignment(AssignmentStatus assignment) {
+        switch (assignment) {
+            case MEETING -> {
+                BaseFunctions.click(frame, By.xpath("//*[@id=\"part_550_toggle_assignment\"]/tr[4]/td[2]/div/input[2]"));
+            }
+        }
+        System.out.println("selectassigment assignment" + assignment);
+    }
+
+
     public void inputData(Map<String, TabPage> tabpages) {
         for (Map.Entry<String,TabPage> entry: tabpages.entrySet()) {
             // System.out.println("Key Tabpage: " + entry.getKey());
@@ -117,11 +130,13 @@ public class Formula {
 
             String tabName = entry.getKey();
             TabPage tabPage = entry.getValue();
+
             String startElement = getStartElement(tabPage);
-            selectTab(tabName, startElement);
+            selectTab(tabName, startElement, tabPage.getAssignment());
             inputTextFields(tabPage.getFields());
             inputTextFieldTable(tabPage.getTable(), tabPage.getAddLineButtonXpath());
             inputCheckBoxes(tabPage.getCheckboxes());
+
         }
     }
 

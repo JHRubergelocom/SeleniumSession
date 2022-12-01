@@ -32,6 +32,11 @@ public class Action {
                 menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]"); // Sitzung
                 buttonLocator = By.xpath("//*[@id=\"ext-comp-1282-textEl\"]"); // Neue Sitzung
             }
+            case "CreateMeetingItem" -> {
+                ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
+                menuLocator = By.xpath("//*[@id=\"button-1280-btnIconEl\"]");   // Meeting
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1276-textEl\"]");  // Neues Thema
+            }
             default -> {
                 ribbonLocator = By.xpath("");
                 menuLocator = By.xpath("");

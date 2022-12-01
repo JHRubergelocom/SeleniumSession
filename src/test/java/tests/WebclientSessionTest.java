@@ -34,7 +34,7 @@ public class WebclientSessionTest {
 
         Map<String,Boolean> checkboxes = new TreeMap<>();
 
-        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_220_meeting_roles']/tr[11]/td[3]/div/input", checkboxes);
+        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_220_meeting_roles']/tr[11]/td[3]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Allgemein", tabPage);
 
         // Mitglieder
@@ -81,7 +81,7 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_230_meetingitem_templ']/tr[10]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_230_meetingitem_templ']/tr[10]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Themen", tabPage);
 
         // Benachrichtigungen
@@ -122,7 +122,7 @@ public class WebclientSessionTest {
         checkboxes = new TreeMap<>();
         checkboxes.put("IX_MAP_MEETING_BOARD_SETTING_ITEMTOAGENDA", true);
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Einstellungen", tabPage);
 
         return tabPages;
@@ -155,7 +155,7 @@ public class WebclientSessionTest {
 */
         Map<String,Boolean> checkboxes = new TreeMap<>();
 
-        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_310_schedule']/tr[5]/td[2]/div/input", checkboxes);
+        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_310_schedule']/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Allgemein", tabPage);
 
         // Teilnehmende
@@ -180,7 +180,7 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[8]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Teilnehmende", tabPage);
 
         // Benachrichtigungen
@@ -207,7 +207,7 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_610_notifications']/tr[8]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_610_notifications']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Benachrichtigungen", tabPage);
 
         // Wiederholung
@@ -220,7 +220,7 @@ public class WebclientSessionTest {
         checkboxes = new TreeMap<>();
         checkboxes.put("WF_MAP_MEETING_REPETITION_CREATE", true);
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Wiederholung", tabPage);
 
         return tabPages;
@@ -228,6 +228,32 @@ public class WebclientSessionTest {
 
     }
 
+    private Map<String, TabPage> createMI1() {
+
+        Map<String, TabPage> tabPages = new TreeMap<>();
+
+        // "" (Nur eine tabPage)
+
+        Map<String,String> fields = new TreeMap<>();
+
+        fields.put("IX_GRP_MEETING_BOARD_NAME", "Meetingboard1");
+        fields.put("IX_GRP_MEETING_BOARD_CODE", "MB1");
+        fields.put("IX_GRP_MEETING_NAME", "Meeting1");
+        fields.put("IX_GRP_MEETING_ITEM_TITLE", "Thema1");
+
+        // fields.put("IX_DESC", "Beschreibung Thema1");
+
+        List<Map<String, String>> table = new ArrayList<>();
+
+        Map<String,Boolean> checkboxes = new TreeMap<>();
+
+        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_310_schedule']/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.MEETING);
+        tabPages.put("", tabPage);
+
+        return tabPages;
+
+
+    }
 
 
     private Map<String, TabPage> createMB2Premium() {
@@ -253,7 +279,7 @@ public class WebclientSessionTest {
 
         Map<String,Boolean> checkboxes = new TreeMap<>();
 
-        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_220_meeting_roles']/tr[11]/td[3]/div/input", checkboxes);
+        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_220_meeting_roles']/tr[11]/td[3]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Allgemein", tabPage);
 
         // Mitglieder
@@ -300,7 +326,7 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_230_meetingitem_templ']/tr[10]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_230_meetingitem_templ']/tr[10]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Tagesordnungspunkte", tabPage);
 
         // Benachrichtigungen
@@ -340,7 +366,7 @@ public class WebclientSessionTest {
         checkboxes = new TreeMap<>();
         checkboxes.put("IX_MAP_MEETING_BOARD_SETTING_ITEMTOAGENDA", true);
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Einstellungen", tabPage);
 
         return tabPages;
@@ -372,7 +398,7 @@ public class WebclientSessionTest {
 */
         Map<String,Boolean> checkboxes = new TreeMap<>();
 
-        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_310_schedule']/tr[5]/td[2]/div/input", checkboxes);
+        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_310_schedule']/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Allgemein", tabPage);
 
         // Teilnehmende
@@ -397,7 +423,7 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[8]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Teilnehmende", tabPage);
 
         // Benachrichtigungen
@@ -424,7 +450,7 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_610_notifications']/tr[8]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_610_notifications']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Benachrichtigungen", tabPage);
 
         // Wiederholung
@@ -437,7 +463,7 @@ public class WebclientSessionTest {
         checkboxes = new TreeMap<>();
         checkboxes.put("WF_MAP_MEETING_REPETITION_CREATE", true);
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Wiederholung", tabPage);
 
         return tabPages;
@@ -465,7 +491,13 @@ public class WebclientSessionTest {
         tabPages = createME1();
         ws.executeAction("CreateMeeting", tabPages);
 
+        ws.selectSolutionsFolder();
+        tabPages = createMI1();
+        ws.executeAction("CreateMeetingItem", tabPages);
 
+
+
+/*
         ws.selectSolutionsFolder();
         tabPages = createMB2Premium();
         ws.executeAction("CreateMeetingBoardPremium", tabPages);
@@ -473,8 +505,9 @@ public class WebclientSessionTest {
         ws.selectSolutionsFolder();
         tabPages = createME1Premium();
         ws.executeAction("CreateMeetingPremium", tabPages);
-
+*/
     }
+
 
 
 }
