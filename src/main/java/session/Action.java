@@ -14,13 +14,13 @@ public class Action {
         switch (action) {
             case "CreateMeetingBoard" -> {
                 ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
-                menuLocator = By.xpath("//*[@id=\"button-1280-btnIconEl\"]"); // Meeting
-                buttonLocator = By.xpath("//*[@id=\"ext-comp-1274-textEl\"]"); // Neues Meetingboard
+                menuLocator = By.xpath("//*[@id=\"button-1280-btnIconEl\"]");   // Meeting
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1274-textEl\"]");  // Neues Meetingboard
             }
             case "CreateMeetingBoardPremium" -> {
                 ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
-                menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]"); // Sitzung
-                buttonLocator = By.xpath("//*[@id=\"ext-comp-1281-textEl\"]"); // Neues Meetingboard
+                menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]");   // Sitzung
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1281-textEl\"]");  // Neues Meetingboard
             }
             case "CreateMeeting" -> {
                 ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
@@ -29,13 +29,18 @@ public class Action {
             }
             case "CreateMeetingPremium" -> {
                 ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
-                menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]"); // Sitzung
-                buttonLocator = By.xpath("//*[@id=\"ext-comp-1282-textEl\"]"); // Neue Sitzung
+                menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]");   // Sitzung
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1282-textEl\"]");  // Neue Sitzung
             }
             case "CreateMeetingItem" -> {
                 ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
                 menuLocator = By.xpath("//*[@id=\"button-1280-btnIconEl\"]");   // Meeting
                 buttonLocator = By.xpath("//*[@id=\"ext-comp-1276-textEl\"]");  // Neues Thema
+            }
+            case "CreateMeetingItemPremium" -> {
+                ribbonLocator = By.xpath("//*[@id=\"button-1218-btnIconEl\"]"); // Neu
+                menuLocator = By.xpath("//*[@id=\"button-1288-btnIconEl\"]");   // Sitzung
+                buttonLocator = By.xpath("//*[@id=\"ext-comp-1284-textEl\"]");  // Neuer TOP
             }
             default -> {
                 ribbonLocator = By.xpath("");

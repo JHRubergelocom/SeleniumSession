@@ -36,6 +36,10 @@ public class BaseFunctions {
             if (!checkbox.isSelected()) {
                 checkbox.click();
             }
+        } else {
+            if (checkbox.isSelected()) {
+                checkbox.click();
+            }
         }
     }
 

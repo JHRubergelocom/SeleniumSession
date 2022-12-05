@@ -47,7 +47,6 @@ public class WebclientSessionTest {
         tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Gerd");
         tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "g.baum@contelo.de");
         tableLine.put("WF_MAP_MEETING_PERSON_COMPANYNAME", "Contelo AG");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Gerd Baum");
         table.add(tableLine);
 
         tableLine = new TreeMap<>();
@@ -55,12 +54,11 @@ public class WebclientSessionTest {
         tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Sandra");
         tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "s.renz@contelo.de");
         tableLine.put("WF_MAP_MEETING_PERSON_COMPANYNAME", "Contelo AG");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Sandra Renz");
         table.add(tableLine);
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_320_members']/tr[8]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_320_members']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Mitglieder", tabPage);
         */
         // Themen
@@ -85,12 +83,11 @@ public class WebclientSessionTest {
         tabPages.put("Themen", tabPage);
 
         // Benachrichtigungen
-        /*
         fields = new TreeMap<>();
 
         table = new ArrayList<>();
         tableLine = new TreeMap<>();
-        // tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
+        tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_RECIPIENTS_", "O");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_VALUE_", "1");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_UNIT_", "y");
@@ -99,7 +96,7 @@ public class WebclientSessionTest {
         table.add(tableLine);
 
         tableLine = new TreeMap<>();
-        // tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
+        tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_RECIPIENTS_", "A");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_VALUE_", "1");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_UNIT_", "Q");
@@ -109,9 +106,8 @@ public class WebclientSessionTest {
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Benachrichtigungen", tabPage);
-        */
 
         // Einstellungen
         fields = new TreeMap<>();
@@ -167,7 +163,6 @@ public class WebclientSessionTest {
         tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Gerd");
         tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "g.baum@contelo.de");
         tableLine.put("WF_MAP_MEETING_PERSON_COMPANYNAME", "Contelo AG");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Gerd Baum");
         table.add(tableLine);
 
         tableLine = new TreeMap<>();
@@ -175,12 +170,11 @@ public class WebclientSessionTest {
         tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Sandra");
         tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "s.renz@contelo.de");
         tableLine.put("WF_MAP_MEETING_PERSON_COMPANYNAME", "Contelo AG");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Sandra Renz");
         table.add(tableLine);
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Teilnehmende", tabPage);
 
         // Benachrichtigungen
@@ -188,7 +182,7 @@ public class WebclientSessionTest {
 
         table = new ArrayList<>();
         tableLine = new TreeMap<>();
-        // tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
+        tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_RECIPIENTS_", "O");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_VALUE_", "1");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_UNIT_", "y");
@@ -197,7 +191,7 @@ public class WebclientSessionTest {
         table.add(tableLine);
 
         tableLine = new TreeMap<>();
-        // tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
+        tableLine.put("IX_MAP_MEETING_NOTIFICATION_TEMPLATE_", "default");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_RECIPIENTS_", "A");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_VALUE_", "1");
         tableLine.put("IX_MAP_MEETING_NOTIFICATION_SHIFT_UNIT_", "Q");
@@ -211,8 +205,7 @@ public class WebclientSessionTest {
         tabPages.put("Benachrichtigungen", tabPage);
 
         // Wiederholung
-
-
+        /*
         fields = new TreeMap<>();
 
         table = new ArrayList<>();
@@ -222,7 +215,7 @@ public class WebclientSessionTest {
 
         tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Wiederholung", tabPage);
-
+        */
         return tabPages;
 
 
@@ -240,18 +233,30 @@ public class WebclientSessionTest {
         fields.put("IX_GRP_MEETING_BOARD_CODE", "MB1");
         fields.put("IX_GRP_MEETING_NAME", "Meeting1");
         fields.put("IX_GRP_MEETING_ITEM_TITLE", "Thema1");
+        fields.put("IX_GRP_MEETING_ITEM_DURATION", "40");
+        fields.put("IX_GRP_MEETING_ITEM_RESPONSIBLE_PERSON", "Adrian Smith");
 
         // fields.put("IX_DESC", "Beschreibung Thema1");
 
         List<Map<String, String>> table = new ArrayList<>();
+        Map<String, String> tableLine = new TreeMap<>();
+        tableLine.put("IX_MAP_MEETING_ITEM_SPEAKER_LASTNAME", "Kraft");
+        tableLine.put("IX_MAP_MEETING_ITEM_SPEAKER_FIRSTNAME", "Bodo");
+        table.add(tableLine);
+
+/*
+        tableLine = new TreeMap<>();
+        tableLine.put("IX_MAP_MEETING_ITEM_SPEAKER_LASTNAME", "Davis");
+        tableLine.put("IX_MAP_MEETING_ITEM_SPEAKER_FIRSTNAME", "Jessica");
+        table.add(tableLine);
+*/
 
         Map<String,Boolean> checkboxes = new TreeMap<>();
 
-        TabPage tabPage = new TabPage(fields, table, "//*[@id='part_310_schedule']/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.MEETING);
+        TabPage tabPage = new TabPage(fields, table, "//*[@id=\"part_300_meeting_item_speaker\"]/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.MEETING);
         tabPages.put("", tabPage);
 
         return tabPages;
-
 
     }
 
@@ -364,7 +369,7 @@ public class WebclientSessionTest {
         table = new ArrayList<>();
 
         checkboxes = new TreeMap<>();
-        checkboxes.put("IX_MAP_MEETING_BOARD_SETTING_ITEMTOAGENDA", true);
+        checkboxes.put("IX_MAP_MEETING_BOARD_SETTING_APPROVAL_REQUIRED", false);
 
         tabPage = new TabPage(fields, table, "//*[@id='part_410_notifications']/tr[7]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Einstellungen", tabPage);
@@ -379,10 +384,10 @@ public class WebclientSessionTest {
         // Allgemein
         Map<String,String> fields = new TreeMap<>();
 
-        fields.put("IX_GRP_MEETING_NAME", "Meeting1");
+        fields.put("IX_GRP_MEETING_NAME", "Sitzung1");
         fields.put("IX_GRP_MEETING_LOCATION", "Musterdorf");
         fields.put("IX_GRP_MEETING_MINUTE_TAKER", "Bodo Kraft");
-        // fields.put("IX_DESC", "Beschreibung Meeting1");
+        // fields.put("IX_DESC", "Beschreibung Sitzung1");
 
         List<Map<String, String>> table = new ArrayList<>();
         Map<String, String> tableLine = new TreeMap<>();
@@ -410,7 +415,6 @@ public class WebclientSessionTest {
         tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Gerd");
         tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "g.baum@contelo.de");
         tableLine.put("WF_MAP_MEETING_PERSON_COMPANYNAME", "Contelo AG");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Gerd Baum");
         table.add(tableLine);
 
         tableLine = new TreeMap<>();
@@ -418,12 +422,11 @@ public class WebclientSessionTest {
         tableLine.put("WF_MAP_MEETING_PERSON_FIRSTNAME", "Sandra");
         tableLine.put("WF_MAP_MEETING_PERSON_EMAIL", "s.renz@contelo.de");
         tableLine.put("WF_MAP_MEETING_PERSON_COMPANYNAME", "Contelo AG");
-        tableLine.put("WF_MAP_MEETING_PERSON_USERNAME", "Sandra Renz");
         table.add(tableLine);
 
         checkboxes = new TreeMap<>();
 
-        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[8]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
+        tabPage = new TabPage(fields, table, "//*[@id='part_410_participants']/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.NOTHING);
         tabPages.put("Teilnehmende", tabPage);
 
         // Benachrichtigungen
@@ -470,6 +473,37 @@ public class WebclientSessionTest {
 
     }
 
+    private Map<String, TabPage> createMI1Premium() {
+
+        Map<String, TabPage> tabPages = new TreeMap<>();
+
+        // "" (Nur eine tabPage)
+
+        Map<String,String> fields = new TreeMap<>();
+
+        fields.put("IX_GRP_MEETING_BOARD_NAME", "Meetingboard2");
+        fields.put("IX_GRP_MEETING_BOARD_CODE", "MB2");
+        fields.put("IX_GRP_MEETING_NAME", "Sitzung1");
+        fields.put("IX_GRP_MEETING_ITEM_TITLE", "Thema1");
+        fields.put("IX_GRP_MEETING_ITEM_DURATION", "30");
+        fields.put("IX_GRP_MEETING_ITEM_RESPONSIBLE_PERSON", "David Lee");
+
+        // fields.put("IX_DESC", "Beschreibung Thema1");
+
+        List<Map<String, String>> table = new ArrayList<>();
+        Map<String, String> tableLine = new TreeMap<>();
+        tableLine.put("IX_MAP_MEETING_ITEM_SPEAKER_LASTNAME", "Bennett");
+        tableLine.put("IX_MAP_MEETING_ITEM_SPEAKER_FIRSTNAME", "Charlotte");
+        table.add(tableLine);
+
+        Map<String,Boolean> checkboxes = new TreeMap<>();
+
+        TabPage tabPage = new TabPage(fields, table, "//*[@id=\"part_300_meeting_item_speaker\"]/tr[5]/td[2]/div/input", checkboxes, AssignmentStatus.MEETING);
+        tabPages.put("", tabPage);
+
+        return tabPages;
+
+    }
 
     @Before
     public void setUp() {
@@ -487,9 +521,11 @@ public class WebclientSessionTest {
         tabPages = createMB1();
         ws.executeAction("CreateMeetingBoard", tabPages);
 
+
         ws.selectSolutionsFolder();
         tabPages = createME1();
         ws.executeAction("CreateMeeting", tabPages);
+
 
         ws.selectSolutionsFolder();
         tabPages = createMI1();
@@ -497,17 +533,21 @@ public class WebclientSessionTest {
 
 
 
-/*
         ws.selectSolutionsFolder();
         tabPages = createMB2Premium();
         ws.executeAction("CreateMeetingBoardPremium", tabPages);
 
+
         ws.selectSolutionsFolder();
         tabPages = createME1Premium();
         ws.executeAction("CreateMeetingPremium", tabPages);
-*/
-    }
 
+
+        ws.selectSolutionsFolder();
+        tabPages = createMI1Premium();
+        ws.executeAction("CreateMeetingItemPremium", tabPages);
+
+    }
 
 
 }

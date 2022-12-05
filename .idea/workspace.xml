@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="Create Meeting Premium">
-      <change afterPath="$PROJECT_DIR$/src/main/java/session/AssignmentStatus.java" afterDir="false" />
+    <list default="true" id="38f0f450-beb2-48c1-bd91-0ce4e32dfc26" name="Changes" comment="Create Meeting Item">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/session/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/session/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/Formula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/session/TabPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/TabPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/session/BaseFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/BaseFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/WebclientSessionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WebclientSessionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/driver/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/driver/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669898057633</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Create Meeting Item">
+      <created>1669905890234</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669905890234</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +256,7 @@
     <MESSAGE value="Create Meeting board" />
     <MESSAGE value="Create Meeting" />
     <MESSAGE value="Create Meeting Premium" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Meeting Premium" />
+    <MESSAGE value="Create Meeting Item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Meeting Item" />
   </component>
 </project>
